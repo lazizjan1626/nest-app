@@ -16,19 +16,20 @@ async function bootstrap() {
 
 
   const config = new DocumentBuilder()
-    .setTitle('Prisma API') 
-    .setDescription('Prisme API uchun dokumentatsiya')  
-    .setVersion('1.0')  
-    .addTag('Prisma')  
+    .setTitle('crm API') 
+    .setDescription('crm API uchun dokumentatsiya')  
+    .setVersion('1.4')  
+    .addTag('crm')  
     .build();
   app.use(cookieParser());
 
 
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
+  const PORT = process.env.PORT ;
 
-  await app.listen(3002,()=>{
-    console.log('Server is running on http://localhost:3002/api')
+  await app.listen(PORT,()=>{
+    console.log(`Server is running on http://localhost:${PORT}/api`)
   });
 }
 bootstrap();

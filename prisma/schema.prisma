@@ -19,4 +19,35 @@ model User {
 
   @@map("user")
 }
+model lid_status {
+  id              Int      @id @default(autoincrement())
+  status          String
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @default(now())
+
+  @@map("lid_status")
+}
+model reason_lid {
+  id              Int      @id @default(autoincrement())
+  reason_lid      String
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @default(now())
+
+  @@map("reason_lid")
+}
+model Stuff {
+    id           Int      @id @default(autoincrement())
+    first_name   String
+    last_name    String
+    phone_number String   @unique
+    password     String
+    is_active    Boolean  @default(true)  
+    created_at   DateTime @default(now())
+    updated_at   DateTime @updatedAt
+}
+
+
+
+
+
 
